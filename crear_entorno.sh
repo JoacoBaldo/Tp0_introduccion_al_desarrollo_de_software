@@ -5,7 +5,7 @@ EPNro1_DIR="$HOME/EPNro1"
 echo "Creando entorno en $EPNro1_DIR..."
 
 if mkdir -p "$EPNro1_DIR"/{entrada,salida,procesado}; then
-    touch "$EPNro1_DIR/salida/FILENAME.txt "
+    touch "$EPNro1_DIR/salida/FILENAME.txt"
 
     if [ -f "consolidar.sh" ]; then
         echo "Copiando consolidar.sh en HOME/EPNro1 y ejecutandolo en background..."
@@ -13,7 +13,7 @@ if mkdir -p "$EPNro1_DIR"/{entrada,salida,procesado}; then
 
         chmod +x "$EPNro1_DIR/consolidar.sh"
 
-        "$EPNro1_DIR/consolidar.sh" > "$EPNro1_DIR/consolidar.log" 2>&1 &
+        bash "$EPNro1_DIR/consolidar.sh" "$EPNro1_DIR/entrada" "$EPNro1_DIR/salida" "$EPNro1_DIR/procesado"> "$EPNro1_DIR/consolidar.log" 2>&1 &
     else
         echo "No se encontró consolidar.sh"
     fi
