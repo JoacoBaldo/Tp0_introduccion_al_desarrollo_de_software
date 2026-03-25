@@ -4,7 +4,7 @@ EPNro1_DIR=$HOME/EPNro1
 
 if [ "$1" == "-d" ]; then
 rm -rf ~/EPNro1
-pkill -f consolidar.sh
+pkill -f "$EPNro1_DIR/consolidar.sh"
 exit
 fi
 
