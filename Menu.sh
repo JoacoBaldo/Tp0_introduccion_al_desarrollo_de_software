@@ -19,22 +19,22 @@ echo "6) - Salir"
 echo "Ingrese la opción a elegir: "
 read opcion
 
+chmod +x *.sh
 case $opcion in
     1)
-    chmod +x "crear_entorno.sh"
     bash crear_entorno.sh "$EPNro1_DIR";;
 
     2)
     bash "$EPNro1_DIR/consolidar.sh" "$EPNro1_DIR/entrada" "$EPNro1_DIR/salida" "$EPNro1_DIR/procesado">"$EPNro1_DIR/consolidar.log" 2>&1 &;;
 
     3)
-    bash opcion3.sh "$EPNro1_DIR/salida";;
+    bash listar_por_padron.sh "$EPNro1_DIR/salida";;
 
     4)
-    bash opcion4.sh "$EPNro1_DIR/salida";;
+    bash listar_por_notas.sh "$EPNro1_DIR/salida";;
 
     5)
-    bash datas_padron.sh "$EPNro1_DIR/salida";;
+    bash datos_usuario.sh "$EPNro1_DIR/salida";;
 
     6)
     pkill -f "$EPNro1_DIR/consolidar.sh"
